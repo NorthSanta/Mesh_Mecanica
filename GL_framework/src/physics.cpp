@@ -227,7 +227,7 @@ void posCorrectV(int i, int j) {
 		glm::vec3 vec;
 		p1 = glm::vec3(totalParts[i*numCols + j].pos);
 		p2 = glm::vec3(totalParts[(i + 1)*numCols + j].pos);
-		vec = p1 - p2;
+		vec = p2 - p1;
 		float mod = glm::length(vec);
 		float max = restDist + (restDist * 10 / 100);
 		if (mod >= max) {
@@ -248,7 +248,7 @@ void posCorrectH(int i, int j) {
 		glm::vec3 vec;
 		p1 = glm::vec3(totalParts[i*numCols + j].pos);
 		p2 = glm::vec3(totalParts[i* numCols + (j + 1)].pos);
-		vec = p1 - p2;
+		vec = p2 - p1;
 		float mod = glm::length(vec);
 		
 		if (mod >= restDist + (restDist * 10 / 100)) {
@@ -399,8 +399,8 @@ void PhysicsUpdate(float dt) {
 			//correcio de posicio
 			posCorrectV(i, j);
 			posCorrectH(i, j);
-			posCorrectShearLeft(i, j);
-			posCorrectShearRight(i, j);
+			//posCorrectShearLeft(i, j);
+			//posCorrectShearRight(i, j);
 
 			//calcul posicio Verlet
 			glm::vec3 temp = totalParts[i*numCols + j].pos;
@@ -429,12 +429,12 @@ void PhysicsUpdate(float dt) {
 			}
 				//Shear Forces Left
 			if (j < 12 && i < 17) {
-				shearFroceLeft(&totalParts, i, j);
+				//shearFroceLeft(&totalParts, i, j);
 			}
 			//Shear Forces Right
 			if (j < 12 && i < 17) {
 
-				shearFroceRight(&totalParts, i, j);
+				//shearFroceRight(&totalParts, i, j);
 
 			}
 			//Bending Force Vertical

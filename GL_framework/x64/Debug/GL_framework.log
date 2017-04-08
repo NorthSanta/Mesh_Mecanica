@@ -1,7 +1,8 @@
 ﻿  physics.cpp
-f:\mesh_framework\gl_framework\src\physics.cpp(27): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-f:\mesh_framework\gl_framework\src\physics.cpp(209): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-  GL_framework.vcxproj -> F:\Mesh_Framework\GL_framework\x64\Debug\GL_framework.exe
-  GL_framework.vcxproj -> F:\Mesh_Framework\GL_framework\x64\Debug\GL_framework.pdb (Partial PDB)
+c:\users\usuario\documents\visual studio 2015\projects\mesh_framework\mesh_mecanica\gl_framework\src\physics.cpp(25): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+c:\users\usuario\documents\visual studio 2015\projects\mesh_framework\mesh_mecanica\gl_framework\src\physics.cpp(77): warning C4305: 'argumento': truncamiento de 'double' a 'float'
+c:\users\usuario\documents\visual studio 2015\projects\mesh_framework\mesh_mecanica\gl_framework\src\physics.cpp(316): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+  GL_framework.vcxproj -> C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Mesh_Framework\Mesh_Mecanica\GL_framework\x64\Debug\GL_framework.exe
+  GL_framework.vcxproj -> C:\Users\Usuario\Documents\Visual Studio 2015\Projects\Mesh_Framework\Mesh_Mecanica\GL_framework\x64\Debug\GL_framework.pdb (Partial PDB)
   0 archivo(s) copiado(s)
   0 archivo(s) copiado(s)

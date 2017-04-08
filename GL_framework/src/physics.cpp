@@ -94,7 +94,7 @@ void structuralForceH(Particle* part[], int i, int j) {
 	p1 = glm::vec3(totalParts[i*numCols + j].pos.x, totalParts[i*numCols + j].pos.y, totalParts[i*numCols + j].pos.z);
 
 	p2 = glm::vec3(totalParts[(i)*numCols + (j + 1)].pos.x, totalParts[(i)*numCols + (j + 1)].pos.y, totalParts[(i)*numCols + (j + 1)].pos.z);
-	vec = p1 - p2;
+	vec = p2 - p1;
 
 	modul = glm::length(vec);//modul del vector
 	
@@ -113,11 +113,9 @@ void structuralForceV(Particle* part[], int i, int j) {
 	glm::vec3 vec;
 	p1 = glm::vec3(totalParts[i*numCols + j].pos.x, totalParts[i*numCols + j].pos.y, totalParts[i*numCols + j].pos.z);
 	p2 = glm::vec3(totalParts[(i + 1)*numCols + j].pos.x, totalParts[(i + 1)*numCols + j].pos.y, totalParts[(i + 1)*numCols + j].pos.z);
-	vec = p1 - p2;
+	vec = p2 - p1;
 	modul = glm::length(vec);//modul del vector
-	if (modul >= restDist + (restDist * 10 / 100) || modul == NAN) {
-		modul = restDist + (restDist * 10 / 100);
-	}
+	
 	float var = -(ke*(modul - llargada) + kd * glm::dot((totalParts[i*numCols + j].velocity - totalParts[(i + 1)*numCols + j].velocity), (vec / modul)));
 	structuralForce = var*(vec / modul);
 	
@@ -136,12 +134,10 @@ void shearFroceLeft(Particle* part[], int i, int j) {
 	p2 = glm::vec3(totalParts[(i + 1)*numCols + ((numCols - j) - 1)].pos.x, totalParts[(i + 1)*numCols + ((numCols - j) - 1)].pos.y, totalParts[(i + 1)*numCols + ((numCols - j) - 1)].pos.z);
 
 
-	vec = p1 - p2;
+	vec = p2 - p1;
 
 	modul = glm::length(vec);//modul del vector
-	if (modul >= llargadaShear - (llargadaShear * 10 / 100) || modul == NAN) {
-		modul = llargadaShear - (llargadaShear * 10 / 100);
-	}
+	
 	float var = -(ke*(modul - llargadaShear) + kd * glm::dot((totalParts[i*numCols + j].velocity - totalParts[(i + 1)*numCols + ((numCols - j) - 1)].velocity), (vec / modul)));
 	structuralForce = var*(vec / modul);
 	//printf("%f", structuralForce.y);
@@ -161,12 +157,10 @@ void shearFroceRight(Particle* part[], int i, int j) {
 	p2 = glm::vec3(totalParts[(i + 1)*numCols + (j + 1)].pos.x, totalParts[(i + 1)*numCols + (j + 1)].pos.y, totalParts[(i + 1)*numCols + (j + 1)].pos.z);
 
 
-	vec = p1 - p2;
+	vec = p2 - p1;
 
 	modul = glm::length(vec);//modul del vector
-	if (modul >= llargadaShear - (llargadaShear * 10 / 100) || modul == NAN) {
-		modul = llargadaShear - (llargadaShear * 10 / 100);
-	}
+	
 	float var = -(ke*(modul - llargadaShear) + kd * glm::dot((totalParts[i*numCols + j].velocity - totalParts[(i + 1)*numCols + (j + 1)].velocity), (vec / modul)));
 	structuralForce = var*(vec / modul);
 	//printf("%f", structuralForce.y);
@@ -185,7 +179,7 @@ void bendingForceH(Particle* part[], int i, int j) {
 	p2 = glm::vec3(totalParts[(i)*numCols + (j + 2)].pos.x, totalParts[(i)*numCols + (j + 2)].pos.y, totalParts[(i)*numCols + (j + 2)].pos.z);
 
 
-	vec = p1 - p2;
+	vec = p2 - p1;
 
 	modul = glm::length(vec);//modul del vector
 	
@@ -208,7 +202,7 @@ void bendingForceV(Particle* part[], int i, int j) {
 	p2 = glm::vec3(totalParts[(i + 2)*numCols + (j)].pos.x, totalParts[(i + 2)*numCols + (j)].pos.y, totalParts[(i + 2)*numCols + (j)].pos.z);
 
 
-	vec = p1 - p2;
+	vec = p2 - p1;
 
 	modul = glm::length(vec);//modul del vector
 	
